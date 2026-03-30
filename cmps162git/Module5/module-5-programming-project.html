@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 162: Module 5 Programming Project</title>
+<style>* { font-family: monospace; }</style>
+<script>
+
+//--------//
+// Events //
+//--------//
+console.log("Events");
+
+// 1. Change the link (the <a> tag) in the HTML body below such that a hello
+//    message is displayed on a click event.
+
+function showHello() {
+  alert("Hello");
+}
+
+
+//--------------//
+// Input Fields //
+//--------------//
+console.log("Input Fields");
+
+// 1. Change the background color to red for the input text field (the <input>
+//    tag) in the HTML body when obtaining the focus and change it back to
+//    white when the focus is lost.
+function focusRed(el) {
+  el.style.backgroundColor = "red";
+}
+  
+
+// 2. Change the background color to the original input background color
+function blurWhite(el) {
+  el.style.backgroundColor = "white";
+}
+
+  
+// 3. Change the text from the default font color to blue
+function changeTextBlue(el) {
+  el.style.color = "blue";
+}
+
+
+//--------//
+// Images //
+//--------//
+console.log("Images");
+
+// 1. Add an image to the HTML body (use the <img> tag). Make it disappear when
+//    someone clicks on it.
+function hideImage(img) {
+  img.style.display = "none";
+}
+
+// 2. Mouse over an object having an existing image and by mousing over another image appears in its place
+function swapImage(img) {
+  img.src = "";
+}
+function restoreImage(img) {
+  img.src = "https://via.placeholder.com/150";
+}
+
+
+//--------//
+// Styles //
+//--------//
+console.log("Styles");
+
+// 1. Use the style to increase the text "The Pirates will advance to the World Series in 2025" 
+// Use a paragraph style code and increase the text to 8 em
+function makeEight() {
+  document.getElementById("pirates").style.fontSize = "8em";
+}
+
+// 2. Use the style to decrease the text "The Pirates will advance to the World Series in 2025" 
+// Use a paragraph style code and increase the text to 5 em
+function makeFive() {
+  document.getElementById("pirates").style.fontSize = "5em";
+}
+  
+
+function swapColors() {
+  let d1 = document.getElementById("div1");
+  let d2 = document.getElementById("div2");
+  let temp = d1.style.backgroundColor;
+  d1.style.backgroundColor = d2.style.backgroundColor;
+  d2.style.backgroundColor = temp;
+}
+
+</script>
+</head>
+<body>
+  See console!<br><br>
+  <a href="#" onclick="showHello()">Click here for a greeting!</a><br><br>
+  <input type="text" onfocus="focusRed(this)" onblur="blurWhite(this)" oninput="changeTextBlue(this)"><br><br>
+  <img src="https://via.placeholder.com/150" onclick="hideImage(this)"><br><br>
+  <img src="https://via.placeholder.com/150" onmouseover="swapImage(this)" onmouseout="restoreImage(this)"><br><br>
+  <p id="pirates">The Pirates will advance to the World Series in 2025</p>
+  <button onclick="makeEight()">8em</button>
+  <button onclick="makeFive()">5em</button>
+  <p>Hello World!</p>
+  <div id="div1"
+       style="background-color:yellow;"
+       onclick="swapColors();">
+    Hello
+  </div>
+  <div id="div2"
+       style="background-color:green;"
+       onclick="swapColors();">
+    World
+  </div>
+</body>
+</html>
